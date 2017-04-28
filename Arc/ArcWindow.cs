@@ -27,5 +27,10 @@ namespace Arc
             Form aboutBox = new AboutBox();
             aboutBox.Show();
         }
+
+        private void dataGridView1_Drag(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
