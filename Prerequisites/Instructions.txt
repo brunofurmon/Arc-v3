@@ -1,0 +1,9 @@
+Author: Bruno Furtado Montes Oliveira
+https://github.com/brunofurmon
+
+1 - Prerequisites to Run Arc.v3
+
+Microsoft 2007 Office System Drive: Data Connectivity Components (Embedded in folder)
+
+If the embedded one does not meet the Operational System you are using, try downloading
+the official from https://www.microsoft.com/en-us/download/confirmation.aspx?id=23734
