@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,9 +29,20 @@ namespace Arc
             aboutBox.Show();
         }
 
-        private void dataGridView1_Drag(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_DragEnter(object sender, DragEventArgs e)
         {
+            e.Effect = (e.Data.GetDataPresent(DataFormats.FileDrop))?
+                DragDropEffects.Move :
+                DragDropEffects.None;
+        }
 
+        private void dataGridView1_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[]) e.Data.GetData(DataFormats.FileDrop);
+                Debug.WriteLine(files);
+            }
         }
     }
 }
