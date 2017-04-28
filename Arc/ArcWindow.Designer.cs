@@ -113,8 +113,8 @@ namespace Arc
             // HorizontalLayout
             // 
             this.HorizontalLayout.ColumnCount = 2;
-            this.HorizontalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.HorizontalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.HorizontalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.74933F));
+            this.HorizontalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.25067F));
             this.HorizontalLayout.Controls.Add(this.dataGridView, 0, 0);
             this.HorizontalLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HorizontalLayout.Location = new System.Drawing.Point(0, 24);
@@ -134,7 +134,7 @@ namespace Arc
             this.dataGridView.Location = new System.Drawing.Point(3, 3);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(447, 279);
+            this.dataGridView.Size = new System.Drawing.Size(445, 279);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragDrop);
             this.dataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragEnter);

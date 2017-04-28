@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Arc.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,7 @@ namespace Arc
         private void dataGridView1_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = (e.Data.GetDataPresent(DataFormats.FileDrop))?
-                DragDropEffects.Move :
+                DragDropEffects.All :
                 DragDropEffects.None;
         }
 
@@ -41,7 +42,15 @@ namespace Arc
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 string[] files = (string[]) e.Data.GetData(DataFormats.FileDrop);
-                Debug.WriteLine(files);
+                // One message only!
+                if (files.Count() == 1)
+                {
+                    // TODO: Extract to Control Method Class inside Form
+                    this.StatusLabel.Text = "Processando";
+                    // Tenta abrir arquivo Excel
+                    DataTable dataTable = ExcelService.CreateDataTableFromExcelFile(files[0]);
+                    this.dataGridView.DataSource = dataTable;
+                }
             }
         }
     }
