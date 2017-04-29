@@ -19,6 +19,7 @@ namespace Arc
             InitializeComponent();
         }
 
+        #region Events
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,13 +46,40 @@ namespace Arc
                 // One message only!
                 if (files.Count() == 1)
                 {
-                    // TODO: Extract to Control Method Class inside Form
-                    this.StatusLabel.Text = "Processando";
-                    // Tenta abrir arquivo Excel
-                    DataTable dataTable = ExcelService.CreateDataTableFromExcelFile(files[0]);
-                    this.dataGridView.DataSource = dataTable;
+                    OpenExcelFile(files[0]);
                 }
             }
+        }
+
+        private void FecharArquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseFile();
+        }
+# endregion Events
+
+        private void OpenExcelFile(string filename)
+        {
+            this.StatusLabel.Text = "Processando";
+
+            DataTable dataTable = ExcelService.CreateDataTableFromExcelFile(filename);
+            this.dataGridView.DataSource = dataTable;
+
+            this.FilenameLabel.Text = filename;
+            this.LineCountLabel.Text = dataTable.Rows.Count.ToString();
+
+            this.StatusLabel.Text = "Pronto";
+        }
+
+        private void CloseFile()
+        {
+            this.StatusLabel.Text = "Fechando arquivo";
+
+            this.dataGridView.DataSource = new {};
+
+            this.FilenameLabel.ResetText();
+            this.LineCountLabel.ResetText();
+
+            this.StatusLabel.Text = "Pronto";
         }
     }
 }

@@ -34,16 +34,26 @@ namespace Arc
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InstructionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HorizontalLayout = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.FilenameTitleLabel = new System.Windows.Forms.Label();
+            this.LineCountTitleLabel = new System.Windows.Forms.Label();
+            this.FilenameLabel = new System.Windows.Forms.Label();
+            this.LineCountLabel = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.FecharArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.StatusBar.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.HorizontalLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatusBar
@@ -76,17 +86,19 @@ namespace Arc
             // arquivoToolStripMenuItem
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sairToolStripMenuItem});
+            this.FecharArquivoToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.SairToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
-            // sairToolStripMenuItem
+            // SairToolStripMenuItem
             // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            this.SairToolStripMenuItem.Name = "SairToolStripMenuItem";
+            this.SairToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.SairToolStripMenuItem.Text = "Sair";
+            this.SairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // ajudaToolStripMenuItem
             // 
@@ -116,6 +128,7 @@ namespace Arc
             this.HorizontalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.74933F));
             this.HorizontalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.25067F));
             this.HorizontalLayout.Controls.Add(this.dataGridView, 0, 0);
+            this.HorizontalLayout.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.HorizontalLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HorizontalLayout.Location = new System.Drawing.Point(0, 24);
             this.HorizontalLayout.Name = "HorizontalLayout";
@@ -139,6 +152,86 @@ namespace Arc
             this.dataGridView.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragDrop);
             this.dataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragEnter);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(454, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(450, 279);
+            this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // FilenameTitleLabel
+            // 
+            this.FilenameTitleLabel.AutoSize = true;
+            this.FilenameTitleLabel.Location = new System.Drawing.Point(3, 0);
+            this.FilenameTitleLabel.Name = "FilenameTitleLabel";
+            this.FilenameTitleLabel.Size = new System.Drawing.Size(46, 13);
+            this.FilenameTitleLabel.TabIndex = 0;
+            this.FilenameTitleLabel.Text = "Arquivo:";
+            // 
+            // LineCountTitleLabel
+            // 
+            this.LineCountTitleLabel.AutoSize = true;
+            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 22);
+            this.LineCountTitleLabel.Name = "LineCountTitleLabel";
+            this.LineCountTitleLabel.Size = new System.Drawing.Size(93, 13);
+            this.LineCountTitleLabel.TabIndex = 2;
+            this.LineCountTitleLabel.Text = "Número de Linhas";
+            // 
+            // FilenameLabel
+            // 
+            this.FilenameLabel.AutoSize = true;
+            this.FilenameLabel.Location = new System.Drawing.Point(106, 0);
+            this.FilenameLabel.Name = "FilenameLabel";
+            this.FilenameLabel.Size = new System.Drawing.Size(0, 13);
+            this.FilenameLabel.TabIndex = 1;
+            // 
+            // LineCountLabel
+            // 
+            this.LineCountLabel.AutoSize = true;
+            this.LineCountLabel.Location = new System.Drawing.Point(106, 22);
+            this.LineCountLabel.Name = "LineCountLabel";
+            this.LineCountLabel.Size = new System.Drawing.Size(0, 13);
+            this.LineCountLabel.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.1982F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.8018F));
+            this.tableLayoutPanel2.Controls.Add(this.LineCountLabel, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.LineCountTitleLabel, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.FilenameTitleLabel, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.FilenameLabel, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 87);
+            this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // FecharArquivoToolStripMenuItem
+            // 
+            this.FecharArquivoToolStripMenuItem.Name = "FecharArquivoToolStripMenuItem";
+            this.FecharArquivoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.FecharArquivoToolStripMenuItem.Text = "Fechar Arquivo";
+            this.FecharArquivoToolStripMenuItem.Click += new System.EventHandler(this.FecharArquivoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            // 
             // ArcWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +249,9 @@ namespace Arc
             this.MainMenu.PerformLayout();
             this.HorizontalLayout.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,13 +262,21 @@ namespace Arc
         private System.Windows.Forms.StatusStrip StatusBar;
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem InstructionsMenuItem;
         private System.Windows.Forms.ToolStripMenuItem AboutMenuItem;
         private System.Windows.Forms.TableLayoutPanel HorizontalLayout;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.ToolStripStatusLabel StatusLabel;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label FilenameTitleLabel;
+        private Label FilenameLabel;
+        private Label LineCountTitleLabel;
+        private Label LineCountLabel;
+        private TableLayoutPanel tableLayoutPanel2;
+        private ToolStripMenuItem FecharArquivoToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }
 
