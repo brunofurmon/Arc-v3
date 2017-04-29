@@ -12,24 +12,26 @@ namespace Arc.Services
         {
             string strExt = "";
             strExt = fullPathFile.Substring(fullPathFile.LastIndexOf("."));
+            string connectionString;
 
-            OleDbConnection connection = null;
             if (strExt == ".xls")
             {
-                connection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + fullPathFile + ";Extended Properties=Excel 8.0;");
+                connectionString = string.Format("Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties=Excel 8.0;", fullPathFile);
+            }
+            else if (strExt == ".xlsx")
+            {
+                connectionString = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=Excel 12.0;", fullPathFile);
             }
             else
             {
-                if (strExt == ".xlsx")
-                {
-                    connection = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + fullPathFile + ";Extended Properties=Excel 12.0;");
-                }
+                return null;
             }
 
+            OleDbConnection connection = new OleDbConnection(connectionString);
             try
             {
                 String name = "Plan1";
-                OleDbCommand command = new OleDbCommand("Select * From [" + name + "$]", connection);
+                OleDbCommand command = new OleDbCommand("SELECT * FROM [" + name + "$]", connection);
                 connection.Open();
 
                 OleDbDataAdapter sda = new OleDbDataAdapter(command);
