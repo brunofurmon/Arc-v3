@@ -161,8 +161,8 @@ namespace Arc
             this.tableLayoutPanel1.Location = new System.Drawing.Point(454, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.93548F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.37276F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(450, 279);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -179,7 +179,7 @@ namespace Arc
             // LineCountTitleLabel
             // 
             this.LineCountTitleLabel.AutoSize = true;
-            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 22);
+            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 39);
             this.LineCountTitleLabel.Name = "LineCountTitleLabel";
             this.LineCountTitleLabel.Size = new System.Drawing.Size(93, 13);
             this.LineCountTitleLabel.TabIndex = 2;
@@ -188,7 +188,7 @@ namespace Arc
             // FilenameLabel
             // 
             this.FilenameLabel.AutoSize = true;
-            this.FilenameLabel.Location = new System.Drawing.Point(106, 0);
+            this.FilenameLabel.Location = new System.Drawing.Point(102, 0);
             this.FilenameLabel.Name = "FilenameLabel";
             this.FilenameLabel.Size = new System.Drawing.Size(0, 13);
             this.FilenameLabel.TabIndex = 1;
@@ -196,7 +196,7 @@ namespace Arc
             // LineCountLabel
             // 
             this.LineCountLabel.AutoSize = true;
-            this.LineCountLabel.Location = new System.Drawing.Point(106, 22);
+            this.LineCountLabel.Location = new System.Drawing.Point(102, 39);
             this.LineCountLabel.Name = "LineCountLabel";
             this.LineCountLabel.Size = new System.Drawing.Size(0, 13);
             this.LineCountLabel.TabIndex = 0;
@@ -204,8 +204,8 @@ namespace Arc
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.1982F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.8018F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.52252F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.47748F));
             this.tableLayoutPanel2.Controls.Add(this.LineCountLabel, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.LineCountTitleLabel, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.FilenameTitleLabel, 0, 0);
@@ -214,10 +214,10 @@ namespace Arc
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 87);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.23529F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 61.76471F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 111);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // FecharArquivoToolStripMenuItem
