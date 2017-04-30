@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.OleDb;
-using System.Diagnostics;
 
 
 namespace Arc.Services
@@ -43,7 +42,6 @@ namespace Arc.Services
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex);
                 return null;
             }
         }

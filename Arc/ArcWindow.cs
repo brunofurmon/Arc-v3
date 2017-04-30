@@ -95,6 +95,8 @@ namespace Arc
 
         private void RenameButton_Click(object sender, EventArgs e)
         {
+            this.StatusLabel.Text = "Renomeando";
+            this.RenameButton.Enabled = false;
             List<Tuple<string, string, bool, string>> filesRenamed = new List<Tuple<string, string, bool, string>>();
             // Read lines from dataSource
             DataGridViewRowCollection source = this.dataGridView.Rows;
@@ -113,8 +115,6 @@ namespace Arc
                 string photoOrderStr = (string)cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue;
                 string sequentialStr = (string)cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue;
                 string addressStr = (string)cells[(int)ColumnsMap.ADDRESS].FormattedValue;
-
-                Debug.WriteLine(string.Format("{0} : {1} - {2}", photoOrderStr, sequentialStr, addressStr));
 
                 // "PLEASE, THINK OF SOMETHING BETTER" - You in the future.
                 int digits = checkedMask.Count(c => c == 'X');
@@ -141,6 +141,8 @@ namespace Arc
                 }
             }
             ShowStatisticsDialog(filesRenamed);
+            this.StatusLabel.Text = "Pronto";
+            this.RenameButton.Enabled = true;
         }
 
         private void ShowStatisticsDialog(List<Tuple<string, string, bool, string>> filesRenamed)

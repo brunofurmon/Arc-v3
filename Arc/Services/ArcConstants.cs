@@ -5,7 +5,7 @@
         public enum ColumnsMap
         {
             PHOTO_ORDER = 3,
-            SEQUENTIAL_NUMBER = 4,
+            SEQUENTIAL_NUMBER = 5,
             ADDRESS = 6
         }
     }
