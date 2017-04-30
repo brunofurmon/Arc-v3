@@ -59,6 +59,9 @@ namespace Arc
 
         private void OpenExcelFile(string filename)
         {
+            // Closes any file opened before
+            CloseFile();
+
             this.StatusLabel.Text = "Processando";
 
             DataTable dataTable = ExcelService.CreateDataTableFromExcelFile(filename);
