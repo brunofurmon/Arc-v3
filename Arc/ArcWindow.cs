@@ -114,6 +114,7 @@ namespace Arc
                 // Read columns data
                 string photoOrderStr = (string)cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue;
                 string sequentialStr = (string)cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue;
+                sequentialStr = sequentialStr.PadLeft(3, '0');
                 string addressStr = (string)cells[(int)ColumnsMap.ADDRESS].FormattedValue;
 
                 // "PLEASE, THINK OF SOMETHING BETTER" - You in the future.
