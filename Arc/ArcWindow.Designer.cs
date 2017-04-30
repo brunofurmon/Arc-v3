@@ -54,6 +54,8 @@ namespace Arc
             this.Dsc4DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.Dsc5DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.RegexOptionButton = new System.Windows.Forms.RadioButton();
+            this.RenameButton = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.StatusBar.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.HorizontalLayout.SuspendLayout();
@@ -170,9 +172,9 @@ namespace Arc
             this.tableLayoutPanel1.Location = new System.Drawing.Point(454, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.14695F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.16129F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.89964F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.51971F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(450, 279);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -223,10 +225,10 @@ namespace Arc
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.92453F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.07547F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.57831F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.42169F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 53);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 83);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // FecharArquivoToolStripMenuItem
@@ -247,14 +249,15 @@ namespace Arc
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.FilenameFormatTitleLabel, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.RenameButton, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 62);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 92);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.66667F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.83333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(444, 120);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(444, 121);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // FilenameFormatTitleLabel
@@ -271,10 +274,11 @@ namespace Arc
             this.flowLayoutPanel1.Controls.Add(this.Dsc4DigitsOptionButton);
             this.flowLayoutPanel1.Controls.Add(this.Dsc5DigitsOptionButton);
             this.flowLayoutPanel1.Controls.Add(this.RegexOptionButton);
+            this.flowLayoutPanel1.Controls.Add(this.maskedTextBox1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 34);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 57);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // Dsc4DigitsOptionButton
@@ -284,7 +288,6 @@ namespace Arc
             this.Dsc4DigitsOptionButton.Name = "Dsc4DigitsOptionButton";
             this.Dsc4DigitsOptionButton.Size = new System.Drawing.Size(75, 17);
             this.Dsc4DigitsOptionButton.TabIndex = 0;
-            this.Dsc4DigitsOptionButton.TabStop = true;
             this.Dsc4DigitsOptionButton.Text = "DSCXXXX";
             this.Dsc4DigitsOptionButton.UseVisualStyleBackColor = true;
             // 
@@ -310,6 +313,23 @@ namespace Arc
             this.RegexOptionButton.TabIndex = 2;
             this.RegexOptionButton.Text = "Customizado";
             this.RegexOptionButton.UseVisualStyleBackColor = true;
+            // 
+            // RenameButton
+            // 
+            this.RenameButton.Location = new System.Drawing.Point(3, 79);
+            this.RenameButton.Name = "RenameButton";
+            this.RenameButton.Size = new System.Drawing.Size(75, 23);
+            this.RenameButton.TabIndex = 3;
+            this.RenameButton.Text = "Renomear";
+            this.RenameButton.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Enabled = false;
+            this.maskedTextBox1.Location = new System.Drawing.Point(263, 3);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 3;
             // 
             // ArcWindow
             // 
@@ -366,6 +386,8 @@ namespace Arc
         private RadioButton Dsc4DigitsOptionButton;
         private RadioButton Dsc5DigitsOptionButton;
         private RadioButton RegexOptionButton;
+        private Button RenameButton;
+        private MaskedTextBox maskedTextBox1;
     }
 }
 
