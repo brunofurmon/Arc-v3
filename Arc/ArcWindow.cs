@@ -95,7 +95,7 @@ namespace Arc
 
         private void RenameButton_Click(object sender, EventArgs e)
         {
-            List<Tuple<string, string>> filesRenamed = new List<Tuple<string, string>>();
+            List<Tuple<string, string, bool, string>> filesRenamed = new List<Tuple<string, string, bool, string>>();
             // Read lines from dataSource
             DataGridViewRowCollection source = this.dataGridView.Rows;
 
@@ -116,31 +116,37 @@ namespace Arc
 
                 Debug.WriteLine(string.Format("{0} : {1} - {2}", photoOrderStr, sequentialStr, addressStr));
 
-                //Get sourceDirectory
+                // "PLEASE, THINK OF SOMETHING BETTER" - You in the future.
+                int digits = checkedMask.Count(c => c == 'X');
+                string paddedPhotoOrderStr = photoOrderStr.PadLeft(digits, '0');
+                string prefix = checkedMask.Remove(checkedMask.Length - digits);
+                string resolutionString = "(1024x683)";
+                string oldFilename = string.Format("{0}\\{1}{2} {3}.jpg", filePath, prefix, paddedPhotoOrderStr, resolutionString);
+
+                string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
+                // Windows only accepts 260 characters on fully qualified filenames
+                newFilename = newFilename.Substring(0, Math.Min(addressStr.Length, 259));
+
+                // Renaming
                 try
                 {
-                    // "PLEASE, THINK OF SOMETHING BETTER" - You in the future.
-                    int digits = checkedMask.Count(c => c == 'X');
-                    string paddedPhotoOrderStr = photoOrderStr.PadLeft(digits, '0');
-                    string prefix = checkedMask.Remove(checkedMask.Length - digits);
-                    string resolutionString = "(1024x683)";
-                    string oldFilename = string.Format("{0}\\{1}{2} {3}.jpg", filePath, prefix, paddedPhotoOrderStr, resolutionString);
 
-                    string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
-                    // Windows only accepts 260 characters on fully qualified filenames
-                    newFilename = newFilename.Substring(0, Math.Min(addressStr.Length, 259));
                     File.Move(oldFilename, newFilename);
 
-                    filesRenamed.Add(Tuple.Create(oldFilename, newFilename));
+                    filesRenamed.Add(Tuple.Create(oldFilename, newFilename, true, string.Empty));
                 }
                 catch (Exception ex)
                 {
-                    //throw;
+                    filesRenamed.Add(Tuple.Create(oldFilename, newFilename, false, ex.Message));
                 }
             }
-            // If file exists, rename it 
-            // Count number of renamed file
-            // in case of error, tell user in Result dialog box
+            ShowStatisticsDialog(filesRenamed);
+        }
+
+        private void ShowStatisticsDialog(List<Tuple<string, string, bool, string>> filesRenamed)
+        {
+            Form statisticsBox = new StatisticsBox(filesRenamed);
+            statisticsBox.Show();
         }
     }
 }
