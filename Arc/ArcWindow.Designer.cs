@@ -50,7 +50,7 @@ namespace Arc
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.FilenameFormatTitleLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.RadioButtonsPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.Dsc4DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.Dsc5DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.RegexOptionButton = new System.Windows.Forms.RadioButton();
@@ -63,7 +63,7 @@ namespace Arc
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.RadioButtonsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatusBar
@@ -248,7 +248,7 @@ namespace Arc
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.FilenameFormatTitleLabel, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.RadioButtonsPanel, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.RenameButton, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 92);
@@ -269,37 +269,37 @@ namespace Arc
             this.FilenameFormatTitleLabel.TabIndex = 0;
             this.FilenameFormatTitleLabel.Text = "Formato:";
             // 
-            // flowLayoutPanel1
+            // RadioButtonsPanel
             // 
-            this.flowLayoutPanel1.Controls.Add(this.Dsc4DigitsOptionButton);
-            this.flowLayoutPanel1.Controls.Add(this.Dsc5DigitsOptionButton);
-            this.flowLayoutPanel1.Controls.Add(this.RegexOptionButton);
-            this.flowLayoutPanel1.Controls.Add(this.maskedTextBox1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(438, 57);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.RadioButtonsPanel.Controls.Add(this.Dsc4DigitsOptionButton);
+            this.RadioButtonsPanel.Controls.Add(this.Dsc5DigitsOptionButton);
+            this.RadioButtonsPanel.Controls.Add(this.RegexOptionButton);
+            this.RadioButtonsPanel.Controls.Add(this.maskedTextBox1);
+            this.RadioButtonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RadioButtonsPanel.Location = new System.Drawing.Point(3, 16);
+            this.RadioButtonsPanel.Name = "RadioButtonsPanel";
+            this.RadioButtonsPanel.Size = new System.Drawing.Size(438, 57);
+            this.RadioButtonsPanel.TabIndex = 1;
             // 
             // Dsc4DigitsOptionButton
             // 
             this.Dsc4DigitsOptionButton.AutoSize = true;
+            this.Dsc4DigitsOptionButton.Checked = true;
             this.Dsc4DigitsOptionButton.Location = new System.Drawing.Point(3, 3);
             this.Dsc4DigitsOptionButton.Name = "Dsc4DigitsOptionButton";
-            this.Dsc4DigitsOptionButton.Size = new System.Drawing.Size(75, 17);
+            this.Dsc4DigitsOptionButton.Size = new System.Drawing.Size(81, 17);
             this.Dsc4DigitsOptionButton.TabIndex = 0;
-            this.Dsc4DigitsOptionButton.Text = "DSCXXXX";
+            this.Dsc4DigitsOptionButton.TabStop = true;
+            this.Dsc4DigitsOptionButton.Text = "_DSCXXXX";
             this.Dsc4DigitsOptionButton.UseVisualStyleBackColor = true;
             // 
             // Dsc5DigitsOptionButton
             // 
             this.Dsc5DigitsOptionButton.AutoSize = true;
-            this.Dsc5DigitsOptionButton.Checked = true;
-            this.Dsc5DigitsOptionButton.Location = new System.Drawing.Point(84, 3);
+            this.Dsc5DigitsOptionButton.Location = new System.Drawing.Point(90, 3);
             this.Dsc5DigitsOptionButton.Name = "Dsc5DigitsOptionButton";
             this.Dsc5DigitsOptionButton.Size = new System.Drawing.Size(82, 17);
             this.Dsc5DigitsOptionButton.TabIndex = 1;
-            this.Dsc5DigitsOptionButton.TabStop = true;
             this.Dsc5DigitsOptionButton.Text = "DSCXXXXX";
             this.Dsc5DigitsOptionButton.UseVisualStyleBackColor = true;
             // 
@@ -307,7 +307,7 @@ namespace Arc
             // 
             this.RegexOptionButton.AutoSize = true;
             this.RegexOptionButton.Enabled = false;
-            this.RegexOptionButton.Location = new System.Drawing.Point(172, 3);
+            this.RegexOptionButton.Location = new System.Drawing.Point(178, 3);
             this.RegexOptionButton.Name = "RegexOptionButton";
             this.RegexOptionButton.Size = new System.Drawing.Size(85, 17);
             this.RegexOptionButton.TabIndex = 2;
@@ -316,17 +316,19 @@ namespace Arc
             // 
             // RenameButton
             // 
+            this.RenameButton.Enabled = false;
             this.RenameButton.Location = new System.Drawing.Point(3, 79);
             this.RenameButton.Name = "RenameButton";
             this.RenameButton.Size = new System.Drawing.Size(75, 23);
             this.RenameButton.TabIndex = 3;
             this.RenameButton.Text = "Renomear";
             this.RenameButton.UseVisualStyleBackColor = true;
+            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
             // 
             // maskedTextBox1
             // 
             this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Location = new System.Drawing.Point(263, 3);
+            this.maskedTextBox1.Location = new System.Drawing.Point(269, 3);
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
             this.maskedTextBox1.TabIndex = 3;
@@ -353,8 +355,8 @@ namespace Arc
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.RadioButtonsPanel.ResumeLayout(false);
+            this.RadioButtonsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,7 +384,7 @@ namespace Arc
         private ToolStripSeparator toolStripSeparator1;
         private TableLayoutPanel tableLayoutPanel3;
         private Label FilenameFormatTitleLabel;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel RadioButtonsPanel;
         private RadioButton Dsc4DigitsOptionButton;
         private RadioButton Dsc5DigitsOptionButton;
         private RadioButton RegexOptionButton;
