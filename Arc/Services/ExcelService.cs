@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
 
@@ -26,19 +27,33 @@ namespace Arc.Services
                 return null;
             }
 
-            OleDbConnection connection = new OleDbConnection(connectionString);
             try
             {
-                string name = "Plan1";
-                string selectionString = string.Format("SELECT * FROM [{0}$]", name);
+                using (OleDbConnection connection = new OleDbConnection(connectionString))
+                {
+                    connection.Open();
 
-                OleDbCommand command = new OleDbCommand(selectionString, connection);
-                connection.Open();
+                    DataTable dtSheet = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                    // Lists of sheets on file (We are actually only interested on the first one)
+                    List<string> sheets = new List<string>();
 
-                OleDbDataAdapter sda = new OleDbDataAdapter(command);
-                DataTable data = new DataTable();
-                sda.Fill(data);
-                return data;
+                    foreach (DataRow drSheet in dtSheet.Rows)
+                    {
+                        if (drSheet["TABLE_NAME"].ToString().Contains("$"))//checks whether row contains '_xlnm#_FilterDatabase' or sheet name(i.e. sheet name always ends with $ sign)
+                        {
+                            sheets.Add(drSheet["TABLE_NAME"].ToString());
+                        }
+                    }
+
+                    string firstSheetName = sheets[0];
+                    string selectionString = string.Format("SELECT * FROM [{0}]", firstSheetName);
+                    OleDbCommand command = new OleDbCommand(selectionString, connection);
+
+                    OleDbDataAdapter sda = new OleDbDataAdapter(command);
+                    DataTable data = new DataTable();
+                    sda.Fill(data);
+                    return data;
+                }
             }
             catch (Exception ex)
             {
