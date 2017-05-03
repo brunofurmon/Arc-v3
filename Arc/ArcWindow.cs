@@ -120,9 +120,9 @@ namespace Arc
                 string resolutionString = "(1024x683)";
                 string oldFilename = string.Format("{0}\\{1}{2} {3}.jpg", filePath, prefix, paddedPhotoOrderStr, resolutionString);
 
-                string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
+                string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr.Trim(' ', '\n', '\t', '\r'));
                 // Windows only accepts 260 characters on fully qualified filenames
-                newFilename = newFilename.Substring(0, Math.Min(addressStr.Length, 259));
+                newFilename = newFilename.Substring(0, Math.Min(newFilename.Length, 259));
 
                 // Renaming
                 try
