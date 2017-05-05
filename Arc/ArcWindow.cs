@@ -113,6 +113,11 @@ namespace Arc
                 sequentialStr = sequentialStr.PadLeft(3, '0');
                 string addressStr = (string)cells[(int)ColumnsMap.ADDRESS].FormattedValue;
 
+                // Removes bad characters from addressStr
+                addressStr = Path.GetInvalidFileNameChars()
+                    .Aggregate(addressStr, (current, c) => current.Replace(c.ToString(), "-"))
+                    .Trim(' ', '\n', '\t', '\r');
+
                 // "PLEASE, THINK OF SOMETHING BETTER" - You in the future.
                 int digits = checkedMask.Count(c => c == 'X');
                 string paddedPhotoOrderStr = photoOrderStr.PadLeft(digits, '0');
@@ -120,7 +125,7 @@ namespace Arc
                 string resolutionString = "(1024x683)";
                 string oldFilename = string.Format("{0}\\{1}{2} {3}.jpg", filePath, prefix, paddedPhotoOrderStr, resolutionString);
 
-                string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr.Trim(' ', '\n', '\t', '\r'));
+                string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
                 // Windows only accepts 260 characters on fully qualified filenames
                 newFilename = newFilename.Substring(0, Math.Min(newFilename.Length, 259));
 
