@@ -34,6 +34,8 @@ namespace Arc
             this.StatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FecharArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.SairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.InstructionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,21 +43,20 @@ namespace Arc
             this.HorizontalLayout = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.FilenameTitleLabel = new System.Windows.Forms.Label();
-            this.LineCountTitleLabel = new System.Windows.Forms.Label();
-            this.FilenameLabel = new System.Windows.Forms.Label();
-            this.LineCountLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.FecharArquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.LineCountLabel = new System.Windows.Forms.Label();
+            this.LineCountTitleLabel = new System.Windows.Forms.Label();
+            this.FilenameTitleLabel = new System.Windows.Forms.Label();
+            this.FilenameLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.FilenameFormatTitleLabel = new System.Windows.Forms.Label();
             this.RadioButtonsPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this._Dsc4DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.Dsc4DigitsOptionButton = new System.Windows.Forms.RadioButton();
-            this.Dsc5DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.RegexOptionButton = new System.Windows.Forms.RadioButton();
-            this.RenameButton = new System.Windows.Forms.Button();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.RenameButton = new System.Windows.Forms.Button();
+            this.Dscs4DigitsOptionButton = new System.Windows.Forms.RadioButton();
             this.StatusBar.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.HorizontalLayout.SuspendLayout();
@@ -72,7 +73,7 @@ namespace Arc
             this.StatusLabel});
             this.StatusBar.Location = new System.Drawing.Point(0, 309);
             this.StatusBar.Name = "StatusBar";
-            this.StatusBar.Size = new System.Drawing.Size(907, 22);
+            this.StatusBar.Size = new System.Drawing.Size(1012, 22);
             this.StatusBar.TabIndex = 0;
             this.StatusBar.Text = "statusStrip1";
             // 
@@ -89,7 +90,7 @@ namespace Arc
             this.ajudaToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(907, 24);
+            this.MainMenu.Size = new System.Drawing.Size(1012, 24);
             this.MainMenu.TabIndex = 1;
             this.MainMenu.Text = "menuStrip1";
             // 
@@ -102,6 +103,18 @@ namespace Arc
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // FecharArquivoToolStripMenuItem
+            // 
+            this.FecharArquivoToolStripMenuItem.Name = "FecharArquivoToolStripMenuItem";
+            this.FecharArquivoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.FecharArquivoToolStripMenuItem.Text = "Fechar Arquivo";
+            this.FecharArquivoToolStripMenuItem.Click += new System.EventHandler(this.FecharArquivoToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
             // 
             // SairToolStripMenuItem
             // 
@@ -144,7 +157,7 @@ namespace Arc
             this.HorizontalLayout.Name = "HorizontalLayout";
             this.HorizontalLayout.RowCount = 1;
             this.HorizontalLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.HorizontalLayout.Size = new System.Drawing.Size(907, 285);
+            this.HorizontalLayout.Size = new System.Drawing.Size(1012, 285);
             this.HorizontalLayout.TabIndex = 5;
             // 
             // dataGridView
@@ -159,7 +172,7 @@ namespace Arc
             this.dataGridView.Location = new System.Drawing.Point(3, 3);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(445, 279);
+            this.dataGridView.Size = new System.Drawing.Size(497, 279);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.DragDrop += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragDrop);
             this.dataGridView.DragEnter += new System.Windows.Forms.DragEventHandler(this.dataGridView1_DragEnter);
@@ -171,48 +184,14 @@ namespace Arc
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(454, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(506, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.89964F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.51971F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(450, 279);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(503, 279);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // FilenameTitleLabel
-            // 
-            this.FilenameTitleLabel.AutoSize = true;
-            this.FilenameTitleLabel.Location = new System.Drawing.Point(3, 0);
-            this.FilenameTitleLabel.Name = "FilenameTitleLabel";
-            this.FilenameTitleLabel.Size = new System.Drawing.Size(46, 13);
-            this.FilenameTitleLabel.TabIndex = 0;
-            this.FilenameTitleLabel.Text = "Arquivo:";
-            // 
-            // LineCountTitleLabel
-            // 
-            this.LineCountTitleLabel.AutoSize = true;
-            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 36);
-            this.LineCountTitleLabel.Name = "LineCountTitleLabel";
-            this.LineCountTitleLabel.Size = new System.Drawing.Size(93, 13);
-            this.LineCountTitleLabel.TabIndex = 2;
-            this.LineCountTitleLabel.Text = "Número de Linhas";
-            // 
-            // FilenameLabel
-            // 
-            this.FilenameLabel.AutoSize = true;
-            this.FilenameLabel.Location = new System.Drawing.Point(102, 0);
-            this.FilenameLabel.Name = "FilenameLabel";
-            this.FilenameLabel.Size = new System.Drawing.Size(0, 13);
-            this.FilenameLabel.TabIndex = 1;
-            // 
-            // LineCountLabel
-            // 
-            this.LineCountLabel.AutoSize = true;
-            this.LineCountLabel.Location = new System.Drawing.Point(102, 36);
-            this.LineCountLabel.Name = "LineCountLabel";
-            this.LineCountLabel.Size = new System.Drawing.Size(0, 13);
-            this.LineCountLabel.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -230,20 +209,42 @@ namespace Arc
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.57831F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.42169F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(444, 83);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(497, 83);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // FecharArquivoToolStripMenuItem
+            // LineCountLabel
             // 
-            this.FecharArquivoToolStripMenuItem.Name = "FecharArquivoToolStripMenuItem";
-            this.FecharArquivoToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.FecharArquivoToolStripMenuItem.Text = "Fechar Arquivo";
-            this.FecharArquivoToolStripMenuItem.Click += new System.EventHandler(this.FecharArquivoToolStripMenuItem_Click);
+            this.LineCountLabel.AutoSize = true;
+            this.LineCountLabel.Location = new System.Drawing.Point(114, 36);
+            this.LineCountLabel.Name = "LineCountLabel";
+            this.LineCountLabel.Size = new System.Drawing.Size(0, 13);
+            this.LineCountLabel.TabIndex = 0;
             // 
-            // toolStripSeparator1
+            // LineCountTitleLabel
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            this.LineCountTitleLabel.AutoSize = true;
+            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 36);
+            this.LineCountTitleLabel.Name = "LineCountTitleLabel";
+            this.LineCountTitleLabel.Size = new System.Drawing.Size(93, 13);
+            this.LineCountTitleLabel.TabIndex = 2;
+            this.LineCountTitleLabel.Text = "Número de Linhas";
+            // 
+            // FilenameTitleLabel
+            // 
+            this.FilenameTitleLabel.AutoSize = true;
+            this.FilenameTitleLabel.Location = new System.Drawing.Point(3, 0);
+            this.FilenameTitleLabel.Name = "FilenameTitleLabel";
+            this.FilenameTitleLabel.Size = new System.Drawing.Size(46, 13);
+            this.FilenameTitleLabel.TabIndex = 0;
+            this.FilenameTitleLabel.Text = "Arquivo:";
+            // 
+            // FilenameLabel
+            // 
+            this.FilenameLabel.AutoSize = true;
+            this.FilenameLabel.Location = new System.Drawing.Point(114, 0);
+            this.FilenameLabel.Name = "FilenameLabel";
+            this.FilenameLabel.Size = new System.Drawing.Size(0, 13);
+            this.FilenameLabel.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -259,7 +260,7 @@ namespace Arc
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.83333F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.66667F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.66667F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(444, 121);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(497, 121);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // FilenameFormatTitleLabel
@@ -273,48 +274,57 @@ namespace Arc
             // 
             // RadioButtonsPanel
             // 
+            this.RadioButtonsPanel.Controls.Add(this._Dsc4DigitsOptionButton);
             this.RadioButtonsPanel.Controls.Add(this.Dsc4DigitsOptionButton);
-            this.RadioButtonsPanel.Controls.Add(this.Dsc5DigitsOptionButton);
+            this.RadioButtonsPanel.Controls.Add(this.Dscs4DigitsOptionButton);
             this.RadioButtonsPanel.Controls.Add(this.RegexOptionButton);
             this.RadioButtonsPanel.Controls.Add(this.maskedTextBox1);
             this.RadioButtonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RadioButtonsPanel.Location = new System.Drawing.Point(3, 16);
             this.RadioButtonsPanel.Name = "RadioButtonsPanel";
-            this.RadioButtonsPanel.Size = new System.Drawing.Size(438, 57);
+            this.RadioButtonsPanel.Size = new System.Drawing.Size(491, 57);
             this.RadioButtonsPanel.TabIndex = 1;
+            // 
+            // _Dsc4DigitsOptionButton
+            // 
+            this._Dsc4DigitsOptionButton.AutoSize = true;
+            this._Dsc4DigitsOptionButton.Checked = true;
+            this._Dsc4DigitsOptionButton.Location = new System.Drawing.Point(3, 3);
+            this._Dsc4DigitsOptionButton.Name = "_Dsc4DigitsOptionButton";
+            this._Dsc4DigitsOptionButton.Size = new System.Drawing.Size(81, 17);
+            this._Dsc4DigitsOptionButton.TabIndex = 0;
+            this._Dsc4DigitsOptionButton.TabStop = true;
+            this._Dsc4DigitsOptionButton.Text = "_DSCXXXX";
+            this._Dsc4DigitsOptionButton.UseVisualStyleBackColor = true;
             // 
             // Dsc4DigitsOptionButton
             // 
             this.Dsc4DigitsOptionButton.AutoSize = true;
-            this.Dsc4DigitsOptionButton.Checked = true;
-            this.Dsc4DigitsOptionButton.Location = new System.Drawing.Point(3, 3);
+            this.Dsc4DigitsOptionButton.Location = new System.Drawing.Point(90, 3);
             this.Dsc4DigitsOptionButton.Name = "Dsc4DigitsOptionButton";
-            this.Dsc4DigitsOptionButton.Size = new System.Drawing.Size(81, 17);
-            this.Dsc4DigitsOptionButton.TabIndex = 0;
-            this.Dsc4DigitsOptionButton.TabStop = true;
-            this.Dsc4DigitsOptionButton.Text = "_DSCXXXX";
+            this.Dsc4DigitsOptionButton.Size = new System.Drawing.Size(82, 17);
+            this.Dsc4DigitsOptionButton.TabIndex = 1;
+            this.Dsc4DigitsOptionButton.Text = "DSCXXXXX";
             this.Dsc4DigitsOptionButton.UseVisualStyleBackColor = true;
-            // 
-            // Dsc5DigitsOptionButton
-            // 
-            this.Dsc5DigitsOptionButton.AutoSize = true;
-            this.Dsc5DigitsOptionButton.Location = new System.Drawing.Point(90, 3);
-            this.Dsc5DigitsOptionButton.Name = "Dsc5DigitsOptionButton";
-            this.Dsc5DigitsOptionButton.Size = new System.Drawing.Size(82, 17);
-            this.Dsc5DigitsOptionButton.TabIndex = 1;
-            this.Dsc5DigitsOptionButton.Text = "DSCXXXXX";
-            this.Dsc5DigitsOptionButton.UseVisualStyleBackColor = true;
             // 
             // RegexOptionButton
             // 
             this.RegexOptionButton.AutoSize = true;
             this.RegexOptionButton.Enabled = false;
-            this.RegexOptionButton.Location = new System.Drawing.Point(178, 3);
+            this.RegexOptionButton.Location = new System.Drawing.Point(266, 3);
             this.RegexOptionButton.Name = "RegexOptionButton";
             this.RegexOptionButton.Size = new System.Drawing.Size(85, 17);
             this.RegexOptionButton.TabIndex = 2;
             this.RegexOptionButton.Text = "Customizado";
             this.RegexOptionButton.UseVisualStyleBackColor = true;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Enabled = false;
+            this.maskedTextBox1.Location = new System.Drawing.Point(357, 3);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 3;
             // 
             // RenameButton
             // 
@@ -327,19 +337,22 @@ namespace Arc
             this.RenameButton.UseVisualStyleBackColor = true;
             this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
             // 
-            // maskedTextBox1
+            // Dscs4DigitsOptionButton
             // 
-            this.maskedTextBox1.Enabled = false;
-            this.maskedTextBox1.Location = new System.Drawing.Point(269, 3);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 3;
+            this.Dscs4DigitsOptionButton.AutoSize = true;
+            this.Dscs4DigitsOptionButton.Location = new System.Drawing.Point(178, 3);
+            this.Dscs4DigitsOptionButton.Name = "Dscs4DigitsOptionButton";
+            this.Dscs4DigitsOptionButton.Size = new System.Drawing.Size(82, 17);
+            this.Dscs4DigitsOptionButton.TabIndex = 4;
+            this.Dscs4DigitsOptionButton.TabStop = true;
+            this.Dscs4DigitsOptionButton.Text = "DSCSXXXX";
+            this.Dscs4DigitsOptionButton.UseVisualStyleBackColor = true;
             // 
             // ArcWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 331);
+            this.ClientSize = new System.Drawing.Size(1012, 331);
             this.Controls.Add(this.HorizontalLayout);
             this.Controls.Add(this.StatusBar);
             this.Controls.Add(this.MainMenu);
@@ -387,11 +400,12 @@ namespace Arc
         private TableLayoutPanel tableLayoutPanel3;
         private Label FilenameFormatTitleLabel;
         private FlowLayoutPanel RadioButtonsPanel;
+        private RadioButton _Dsc4DigitsOptionButton;
         private RadioButton Dsc4DigitsOptionButton;
-        private RadioButton Dsc5DigitsOptionButton;
         private RadioButton RegexOptionButton;
         private Button RenameButton;
         private MaskedTextBox maskedTextBox1;
+        private RadioButton Dscs4DigitsOptionButton;
     }
 }
 

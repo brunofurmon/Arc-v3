@@ -102,16 +102,27 @@ namespace Arc
                 this.RadioButtonsPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
             string checkedMask = checkedButton.Text;
 
+            // Resolution depends on used Camera:
+            string resolutionString;
+            if (checkedButton.Name.StartsWith("Dscs"))
+            {
+                resolutionString = "(1024x768)";
+            }
+            else
+            {
+                resolutionString = "(1024x683)";
+            }
+
             string filePath = Path.GetDirectoryName(this.CurrentFilename);
 
             foreach (DataGridViewRow row in source)
             {
                 DataGridViewCellCollection cells = row.Cells;
                 // Read columns data
-                string photoOrderStr = (string)cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue;
-                string sequentialStr = (string)cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue;
-                sequentialStr = sequentialStr.PadLeft(3, '0');
-                string addressStr = (string)cells[(int)ColumnsMap.ADDRESS].FormattedValue;
+                string photoOrderStr = cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue.ToString();
+                // Depends on 
+                string sequentialStr = cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue.ToString().PadLeft(3, '0');
+                string addressStr = cells[(int)ColumnsMap.ADDRESS].FormattedValue.ToString();
 
                 // Removes bad characters from addressStr
                 addressStr = Path.GetInvalidFileNameChars()
@@ -122,7 +133,7 @@ namespace Arc
                 int digits = checkedMask.Count(c => c == 'X');
                 string paddedPhotoOrderStr = photoOrderStr.PadLeft(digits, '0');
                 string prefix = checkedMask.Remove(checkedMask.Length - digits);
-                string resolutionString = "(1024x683)";
+                
                 string oldFilename = string.Format("{0}\\{1}{2} {3}.jpg", filePath, prefix, paddedPhotoOrderStr, resolutionString);
 
                 string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
