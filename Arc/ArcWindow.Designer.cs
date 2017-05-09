@@ -51,20 +51,20 @@ namespace Arc
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.PrefixTitleLabel = new System.Windows.Forms.Label();
             this.RadioButtonsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.NoSuffixOption = new System.Windows.Forms.CheckBox();
             this.FourDigitsOption = new System.Windows.Forms.CheckBox();
             this.FiveDigitsOption = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NoPreffixOption = new System.Windows.Forms.CheckBox();
             this.DscOption = new System.Windows.Forms.CheckBox();
             this._DscOption = new System.Windows.Forms.CheckBox();
-            this.DscsOption = new System.Windows.Forms.CheckBox();
-            this.x768SuffixOption = new System.Windows.Forms.CheckBox();
-            this.SuffixTitleLabel = new System.Windows.Forms.Label();
-            this.RenameButton = new System.Windows.Forms.Button();
+            this.DscfOption = new System.Windows.Forms.CheckBox();
             this.DigitsTitleLabel = new System.Windows.Forms.Label();
+            this.SuffixTitleLabel = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.NoSuffixOption = new System.Windows.Forms.CheckBox();
+            this.x768SuffixOption = new System.Windows.Forms.CheckBox();
             this.x683SuffixOption = new System.Windows.Forms.CheckBox();
-            this.NoPreffixOption = new System.Windows.Forms.CheckBox();
+            this.RenameButton = new System.Windows.Forms.Button();
             this.StatusBar.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.HorizontalLayout.SuspendLayout();
@@ -299,16 +299,6 @@ namespace Arc
             this.RadioButtonsPanel.Size = new System.Drawing.Size(491, 41);
             this.RadioButtonsPanel.TabIndex = 1;
             // 
-            // NoSuffixOption
-            // 
-            this.NoSuffixOption.AutoSize = true;
-            this.NoSuffixOption.Location = new System.Drawing.Point(3, 3);
-            this.NoSuffixOption.Name = "NoSuffixOption";
-            this.NoSuffixOption.Size = new System.Drawing.Size(66, 17);
-            this.NoSuffixOption.TabIndex = 5;
-            this.NoSuffixOption.Text = "Nenhum";
-            this.NoSuffixOption.UseVisualStyleBackColor = true;
-            // 
             // FourDigitsOption
             // 
             this.FourDigitsOption.AutoSize = true;
@@ -334,12 +324,22 @@ namespace Arc
             this.flowLayoutPanel1.Controls.Add(this.NoPreffixOption);
             this.flowLayoutPanel1.Controls.Add(this.DscOption);
             this.flowLayoutPanel1.Controls.Add(this._DscOption);
-            this.flowLayoutPanel1.Controls.Add(this.DscsOption);
+            this.flowLayoutPanel1.Controls.Add(this.DscfOption);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 21);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(491, 40);
             this.flowLayoutPanel1.TabIndex = 2;
+            // 
+            // NoPreffixOption
+            // 
+            this.NoPreffixOption.AutoSize = true;
+            this.NoPreffixOption.Location = new System.Drawing.Point(3, 3);
+            this.NoPreffixOption.Name = "NoPreffixOption";
+            this.NoPreffixOption.Size = new System.Drawing.Size(66, 17);
+            this.NoPreffixOption.TabIndex = 2;
+            this.NoPreffixOption.Text = "Nenhum";
+            this.NoPreffixOption.UseVisualStyleBackColor = true;
             // 
             // DscOption
             // 
@@ -361,45 +361,15 @@ namespace Arc
             this._DscOption.Text = "_DSC";
             this._DscOption.UseVisualStyleBackColor = true;
             // 
-            // DscsOption
+            // DscfOption
             // 
-            this.DscsOption.AutoSize = true;
-            this.DscsOption.Location = new System.Drawing.Point(189, 3);
-            this.DscsOption.Name = "DscsOption";
-            this.DscsOption.Size = new System.Drawing.Size(55, 17);
-            this.DscsOption.TabIndex = 2;
-            this.DscsOption.Text = "DSCS";
-            this.DscsOption.UseVisualStyleBackColor = true;
-            // 
-            // x768SuffixOption
-            // 
-            this.x768SuffixOption.AutoSize = true;
-            this.x768SuffixOption.Location = new System.Drawing.Point(75, 3);
-            this.x768SuffixOption.Name = "x768SuffixOption";
-            this.x768SuffixOption.Size = new System.Drawing.Size(85, 17);
-            this.x768SuffixOption.TabIndex = 3;
-            this.x768SuffixOption.Text = "_(1024x768)";
-            this.x768SuffixOption.UseVisualStyleBackColor = true;
-            // 
-            // SuffixTitleLabel
-            // 
-            this.SuffixTitleLabel.AutoSize = true;
-            this.SuffixTitleLabel.Location = new System.Drawing.Point(3, 124);
-            this.SuffixTitleLabel.Name = "SuffixTitleLabel";
-            this.SuffixTitleLabel.Size = new System.Drawing.Size(36, 13);
-            this.SuffixTitleLabel.TabIndex = 3;
-            this.SuffixTitleLabel.Text = "Sufixo";
-            // 
-            // RenameButton
-            // 
-            this.RenameButton.Enabled = false;
-            this.RenameButton.Location = new System.Drawing.Point(3, 330);
-            this.RenameButton.Name = "RenameButton";
-            this.RenameButton.Size = new System.Drawing.Size(75, 23);
-            this.RenameButton.TabIndex = 3;
-            this.RenameButton.Text = "Renomear";
-            this.RenameButton.UseVisualStyleBackColor = true;
-            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
+            this.DscfOption.AutoSize = true;
+            this.DscfOption.Location = new System.Drawing.Point(189, 3);
+            this.DscfOption.Name = "DscfOption";
+            this.DscfOption.Size = new System.Drawing.Size(54, 17);
+            this.DscfOption.TabIndex = 2;
+            this.DscfOption.Text = "DSCF";
+            this.DscfOption.UseVisualStyleBackColor = true;
             // 
             // DigitsTitleLabel
             // 
@@ -409,6 +379,15 @@ namespace Arc
             this.DigitsTitleLabel.Size = new System.Drawing.Size(94, 13);
             this.DigitsTitleLabel.TabIndex = 4;
             this.DigitsTitleLabel.Text = "Dígitos Numéricos";
+            // 
+            // SuffixTitleLabel
+            // 
+            this.SuffixTitleLabel.AutoSize = true;
+            this.SuffixTitleLabel.Location = new System.Drawing.Point(3, 124);
+            this.SuffixTitleLabel.Name = "SuffixTitleLabel";
+            this.SuffixTitleLabel.Size = new System.Drawing.Size(36, 13);
+            this.SuffixTitleLabel.TabIndex = 3;
+            this.SuffixTitleLabel.Text = "Sufixo";
             // 
             // flowLayoutPanel2
             // 
@@ -421,6 +400,26 @@ namespace Arc
             this.flowLayoutPanel2.Size = new System.Drawing.Size(491, 97);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
+            // NoSuffixOption
+            // 
+            this.NoSuffixOption.AutoSize = true;
+            this.NoSuffixOption.Location = new System.Drawing.Point(3, 3);
+            this.NoSuffixOption.Name = "NoSuffixOption";
+            this.NoSuffixOption.Size = new System.Drawing.Size(66, 17);
+            this.NoSuffixOption.TabIndex = 5;
+            this.NoSuffixOption.Text = "Nenhum";
+            this.NoSuffixOption.UseVisualStyleBackColor = true;
+            // 
+            // x768SuffixOption
+            // 
+            this.x768SuffixOption.AutoSize = true;
+            this.x768SuffixOption.Location = new System.Drawing.Point(75, 3);
+            this.x768SuffixOption.Name = "x768SuffixOption";
+            this.x768SuffixOption.Size = new System.Drawing.Size(85, 17);
+            this.x768SuffixOption.TabIndex = 3;
+            this.x768SuffixOption.Text = "_(1024x768)";
+            this.x768SuffixOption.UseVisualStyleBackColor = true;
+            // 
             // x683SuffixOption
             // 
             this.x683SuffixOption.AutoSize = true;
@@ -431,15 +430,16 @@ namespace Arc
             this.x683SuffixOption.Text = "_(1024x683)";
             this.x683SuffixOption.UseVisualStyleBackColor = true;
             // 
-            // NoPreffixOption
+            // RenameButton
             // 
-            this.NoPreffixOption.AutoSize = true;
-            this.NoPreffixOption.Location = new System.Drawing.Point(3, 3);
-            this.NoPreffixOption.Name = "NoPreffixOption";
-            this.NoPreffixOption.Size = new System.Drawing.Size(66, 17);
-            this.NoPreffixOption.TabIndex = 2;
-            this.NoPreffixOption.Text = "Nenhum";
-            this.NoPreffixOption.UseVisualStyleBackColor = true;
+            this.RenameButton.Enabled = false;
+            this.RenameButton.Location = new System.Drawing.Point(3, 330);
+            this.RenameButton.Name = "RenameButton";
+            this.RenameButton.Size = new System.Drawing.Size(75, 23);
+            this.RenameButton.TabIndex = 3;
+            this.RenameButton.Text = "Renomear";
+            this.RenameButton.UseVisualStyleBackColor = true;
+            this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
             // 
             // ArcWindow
             // 
@@ -504,7 +504,7 @@ namespace Arc
         private FlowLayoutPanel flowLayoutPanel1;
         private CheckBox DscOption;
         private CheckBox _DscOption;
-        private CheckBox DscsOption;
+        private CheckBox DscfOption;
         private CheckBox x768SuffixOption;
         private Label SuffixTitleLabel;
         private Label DigitsTitleLabel;
