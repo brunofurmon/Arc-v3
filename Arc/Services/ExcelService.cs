@@ -11,7 +11,7 @@ namespace Arc.Services
         public static DataTable CreateDataTableFromExcelFile(string fullPathFile)
         {
             string strExt = "";
-            strExt = fullPathFile.Substring(fullPathFile.LastIndexOf("."));
+            strExt = fullPathFile.Substring(fullPathFile.LastIndexOf(".")).ToLowerInvariant();
             string connectionString;
 
             if (strExt == ".xls")
