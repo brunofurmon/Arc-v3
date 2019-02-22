@@ -19,7 +19,6 @@ namespace Arc
             InitializeComponent();
         }
 
-        #region Events
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -55,7 +54,6 @@ namespace Arc
         {
             CloseFile();
         }
-# endregion Events
 
         private void OpenExcelFile(string filename)
         {
@@ -97,29 +95,13 @@ namespace Arc
             // Read lines from dataSource
             DataGridViewRowCollection source = this.dataGridView.Rows;
 
-            // Get Filename Rename Selection
-            RadioButton checkedButton =
-                this.RadioButtonsPanel.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-            string checkedMask = checkedButton.Text;
-
-            // Resolution depends on used Camera:
-            string resolutionString;
-            if (checkedButton.Name.StartsWith("Dscs"))
-            {
-                resolutionString = "(1024x768)";
-            }
-            else
-            {
-                resolutionString = "(1024x683)";
-            }
-
             string filePath = Path.GetDirectoryName(this.CurrentFilename);
-
+            string[] availableFilenames = Directory.GetFiles(filePath, "*.jp*");
             foreach (DataGridViewRow row in source)
             {
                 DataGridViewCellCollection cells = row.Cells;
                 // Read columns data
-                string photoOrderStr = cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue.ToString();
+                string photoOrderStr = cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue.ToString().PadLeft(4, '0');
                 // Depends on 
                 string sequentialStr = cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue.ToString().PadLeft(3, '0');
                 string addressStr = cells[(int)ColumnsMap.ADDRESS].FormattedValue.ToString();
@@ -129,12 +111,8 @@ namespace Arc
                     .Aggregate(addressStr, (current, c) => current.Replace(c.ToString(), "-"))
                     .Trim(' ', '\n', '\t', '\r');
 
-                // "PLEASE, THINK OF SOMETHING BETTER" - You in the future.
-                int digits = checkedMask.Count(c => c == 'X');
-                string paddedPhotoOrderStr = photoOrderStr.PadLeft(digits, '0');
-                string prefix = checkedMask.Remove(checkedMask.Length - digits);
-                
-                string oldFilename = string.Format("{0}\\{1}{2} {3}.jpg", filePath, prefix, paddedPhotoOrderStr, resolutionString);
+                // Find file in list
+                string oldFilename = availableFilenames.FirstOrDefault(name => name.Contains(photoOrderStr));
 
                 string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
                 // Windows only accepts 260 characters on fully qualified filenames

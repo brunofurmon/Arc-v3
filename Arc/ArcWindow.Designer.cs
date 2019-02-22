@@ -48,22 +48,6 @@ namespace Arc
             this.LineCountTitleLabel = new System.Windows.Forms.Label();
             this.FilenameTitleLabel = new System.Windows.Forms.Label();
             this.FilenameLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.PrefixTitleLabel = new System.Windows.Forms.Label();
-            this.RadioButtonsPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.FourDigitsOption = new System.Windows.Forms.CheckBox();
-            this.FiveDigitsOption = new System.Windows.Forms.CheckBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.NoPreffixOption = new System.Windows.Forms.CheckBox();
-            this.DscOption = new System.Windows.Forms.CheckBox();
-            this._DscOption = new System.Windows.Forms.CheckBox();
-            this.DscfOption = new System.Windows.Forms.CheckBox();
-            this.DigitsTitleLabel = new System.Windows.Forms.Label();
-            this.SuffixTitleLabel = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.NoSuffixOption = new System.Windows.Forms.CheckBox();
-            this.x768SuffixOption = new System.Windows.Forms.CheckBox();
-            this.x683SuffixOption = new System.Windows.Forms.CheckBox();
             this.RenameButton = new System.Windows.Forms.Button();
             this.StatusBar.SuspendLayout();
             this.MainMenu.SuspendLayout();
@@ -71,10 +55,6 @@ namespace Arc
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.RadioButtonsPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // StatusBar
@@ -192,7 +172,6 @@ namespace Arc
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.RenameButton, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(506, 3);
@@ -257,179 +236,6 @@ namespace Arc
             this.FilenameLabel.Size = new System.Drawing.Size(0, 13);
             this.FilenameLabel.TabIndex = 1;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.PrefixTitleLabel, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.RadioButtonsPanel, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.DigitsTitleLabel, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.SuffixTitleLabel, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 0, 5);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 81);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 6;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.894737F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.34156F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.761317F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.75309F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.995885F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 41.97531F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(497, 243);
-            this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // PrefixTitleLabel
-            // 
-            this.PrefixTitleLabel.AutoSize = true;
-            this.PrefixTitleLabel.Location = new System.Drawing.Point(3, 0);
-            this.PrefixTitleLabel.Name = "PrefixTitleLabel";
-            this.PrefixTitleLabel.Size = new System.Drawing.Size(39, 13);
-            this.PrefixTitleLabel.TabIndex = 0;
-            this.PrefixTitleLabel.Text = "Prefixo";
-            // 
-            // RadioButtonsPanel
-            // 
-            this.RadioButtonsPanel.Controls.Add(this.FourDigitsOption);
-            this.RadioButtonsPanel.Controls.Add(this.FiveDigitsOption);
-            this.RadioButtonsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RadioButtonsPanel.Location = new System.Drawing.Point(3, 80);
-            this.RadioButtonsPanel.Name = "RadioButtonsPanel";
-            this.RadioButtonsPanel.Size = new System.Drawing.Size(491, 41);
-            this.RadioButtonsPanel.TabIndex = 1;
-            // 
-            // FourDigitsOption
-            // 
-            this.FourDigitsOption.AutoSize = true;
-            this.FourDigitsOption.Location = new System.Drawing.Point(3, 3);
-            this.FourDigitsOption.Name = "FourDigitsOption";
-            this.FourDigitsOption.Size = new System.Drawing.Size(69, 17);
-            this.FourDigitsOption.TabIndex = 6;
-            this.FourDigitsOption.Text = "4 Dígitos";
-            this.FourDigitsOption.UseVisualStyleBackColor = true;
-            // 
-            // FiveDigitsOption
-            // 
-            this.FiveDigitsOption.AutoSize = true;
-            this.FiveDigitsOption.Location = new System.Drawing.Point(78, 3);
-            this.FiveDigitsOption.Name = "FiveDigitsOption";
-            this.FiveDigitsOption.Size = new System.Drawing.Size(69, 17);
-            this.FiveDigitsOption.TabIndex = 7;
-            this.FiveDigitsOption.Text = "5 Dígitos";
-            this.FiveDigitsOption.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.NoPreffixOption);
-            this.flowLayoutPanel1.Controls.Add(this.DscOption);
-            this.flowLayoutPanel1.Controls.Add(this._DscOption);
-            this.flowLayoutPanel1.Controls.Add(this.DscfOption);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 21);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(491, 40);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // NoPreffixOption
-            // 
-            this.NoPreffixOption.AutoSize = true;
-            this.NoPreffixOption.Location = new System.Drawing.Point(3, 3);
-            this.NoPreffixOption.Name = "NoPreffixOption";
-            this.NoPreffixOption.Size = new System.Drawing.Size(66, 17);
-            this.NoPreffixOption.TabIndex = 2;
-            this.NoPreffixOption.Text = "Nenhum";
-            this.NoPreffixOption.UseVisualStyleBackColor = true;
-            // 
-            // DscOption
-            // 
-            this.DscOption.AutoSize = true;
-            this.DscOption.Location = new System.Drawing.Point(75, 3);
-            this.DscOption.Name = "DscOption";
-            this.DscOption.Size = new System.Drawing.Size(48, 17);
-            this.DscOption.TabIndex = 0;
-            this.DscOption.Text = "DSC";
-            this.DscOption.UseVisualStyleBackColor = true;
-            // 
-            // _DscOption
-            // 
-            this._DscOption.AutoSize = true;
-            this._DscOption.Location = new System.Drawing.Point(129, 3);
-            this._DscOption.Name = "_DscOption";
-            this._DscOption.Size = new System.Drawing.Size(54, 17);
-            this._DscOption.TabIndex = 1;
-            this._DscOption.Text = "_DSC";
-            this._DscOption.UseVisualStyleBackColor = true;
-            // 
-            // DscfOption
-            // 
-            this.DscfOption.AutoSize = true;
-            this.DscfOption.Location = new System.Drawing.Point(189, 3);
-            this.DscfOption.Name = "DscfOption";
-            this.DscfOption.Size = new System.Drawing.Size(54, 17);
-            this.DscfOption.TabIndex = 2;
-            this.DscfOption.Text = "DSCF";
-            this.DscfOption.UseVisualStyleBackColor = true;
-            // 
-            // DigitsTitleLabel
-            // 
-            this.DigitsTitleLabel.AutoSize = true;
-            this.DigitsTitleLabel.Location = new System.Drawing.Point(3, 64);
-            this.DigitsTitleLabel.Name = "DigitsTitleLabel";
-            this.DigitsTitleLabel.Size = new System.Drawing.Size(94, 13);
-            this.DigitsTitleLabel.TabIndex = 4;
-            this.DigitsTitleLabel.Text = "Dígitos Numéricos";
-            // 
-            // SuffixTitleLabel
-            // 
-            this.SuffixTitleLabel.AutoSize = true;
-            this.SuffixTitleLabel.Location = new System.Drawing.Point(3, 124);
-            this.SuffixTitleLabel.Name = "SuffixTitleLabel";
-            this.SuffixTitleLabel.Size = new System.Drawing.Size(36, 13);
-            this.SuffixTitleLabel.TabIndex = 3;
-            this.SuffixTitleLabel.Text = "Sufixo";
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.NoSuffixOption);
-            this.flowLayoutPanel2.Controls.Add(this.x768SuffixOption);
-            this.flowLayoutPanel2.Controls.Add(this.x683SuffixOption);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 143);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(491, 97);
-            this.flowLayoutPanel2.TabIndex = 5;
-            // 
-            // NoSuffixOption
-            // 
-            this.NoSuffixOption.AutoSize = true;
-            this.NoSuffixOption.Location = new System.Drawing.Point(3, 3);
-            this.NoSuffixOption.Name = "NoSuffixOption";
-            this.NoSuffixOption.Size = new System.Drawing.Size(66, 17);
-            this.NoSuffixOption.TabIndex = 5;
-            this.NoSuffixOption.Text = "Nenhum";
-            this.NoSuffixOption.UseVisualStyleBackColor = true;
-            // 
-            // x768SuffixOption
-            // 
-            this.x768SuffixOption.AutoSize = true;
-            this.x768SuffixOption.Location = new System.Drawing.Point(75, 3);
-            this.x768SuffixOption.Name = "x768SuffixOption";
-            this.x768SuffixOption.Size = new System.Drawing.Size(85, 17);
-            this.x768SuffixOption.TabIndex = 3;
-            this.x768SuffixOption.Text = "_(1024x768)";
-            this.x768SuffixOption.UseVisualStyleBackColor = true;
-            // 
-            // x683SuffixOption
-            // 
-            this.x683SuffixOption.AutoSize = true;
-            this.x683SuffixOption.Location = new System.Drawing.Point(166, 3);
-            this.x683SuffixOption.Name = "x683SuffixOption";
-            this.x683SuffixOption.Size = new System.Drawing.Size(85, 17);
-            this.x683SuffixOption.TabIndex = 3;
-            this.x683SuffixOption.Text = "_(1024x683)";
-            this.x683SuffixOption.UseVisualStyleBackColor = true;
-            // 
             // RenameButton
             // 
             this.RenameButton.Enabled = false;
@@ -461,14 +267,6 @@ namespace Arc
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.RadioButtonsPanel.ResumeLayout(false);
-            this.RadioButtonsPanel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,23 +292,7 @@ namespace Arc
         private TableLayoutPanel tableLayoutPanel2;
         private ToolStripMenuItem FecharArquivoToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
-        private TableLayoutPanel tableLayoutPanel3;
-        private Label PrefixTitleLabel;
-        private FlowLayoutPanel RadioButtonsPanel;
         private Button RenameButton;
-        private CheckBox NoSuffixOption;
-        private CheckBox FourDigitsOption;
-        private CheckBox FiveDigitsOption;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private CheckBox DscOption;
-        private CheckBox _DscOption;
-        private CheckBox DscfOption;
-        private CheckBox x768SuffixOption;
-        private Label SuffixTitleLabel;
-        private Label DigitsTitleLabel;
-        private FlowLayoutPanel flowLayoutPanel2;
-        private CheckBox NoPreffixOption;
-        private CheckBox x683SuffixOption;
     }
 }
 
