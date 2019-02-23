@@ -92,37 +92,50 @@ namespace Arc
             this.StatusLabel.Text = "Renomeando";
             this.RenameButton.Enabled = false;
             List<Tuple<string, string, bool, string>> filesRenamed = new List<Tuple<string, string, bool, string>>();
+
+            // Output folder
+            string outputFolder = "Fotos Processadas";
+
             // Read lines from dataSource
             DataGridViewRowCollection source = this.dataGridView.Rows;
 
             string filePath = Path.GetDirectoryName(this.CurrentFilename);
             string[] availableFilenames = Directory.GetFiles(filePath, "*.jp*");
+
+            // Creates output directory
+            Directory.CreateDirectory(string.Format("{0}\\{1}\\", filePath, outputFolder));
+
             foreach (DataGridViewRow row in source)
             {
                 DataGridViewCellCollection cells = row.Cells;
-                // Read columns data
-                string photoOrderStr = cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue.ToString().PadLeft(4, '0');
-                // Depends on 
-                string sequentialStr = cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue.ToString().PadLeft(3, '0');
-                string addressStr = cells[(int)ColumnsMap.ADDRESS].FormattedValue.ToString();
 
-                // Removes bad characters from addressStr
-                addressStr = Path.GetInvalidFileNameChars()
-                    .Aggregate(addressStr, (current, c) => current.Replace(c.ToString(), "-"))
-                    .Trim(' ', '\n', '\t', '\r');
+                // Skip rows until number is found
+                string formattedPhotoColumnString = cells[(int)ColumnsMap.PHOTO_ORDER].FormattedValue.ToString();
+
+                bool isNotData = string.IsNullOrWhiteSpace(formattedPhotoColumnString) || !int.TryParse(formattedPhotoColumnString, out int res);
+
+                if (isNotData)
+                {
+                    continue;
+                }
+
+                // Read columns data
+                string photoOrderStr = formattedPhotoColumnString.PadLeft(4, '0');
+
+                // Sequential number
+                string sequentialStr = cells[(int)ColumnsMap.SEQUENTIAL_NUMBER].FormattedValue.ToString().PadLeft(3, '0');
 
                 // Find file in list
                 string oldFilename = availableFilenames.FirstOrDefault(name => name.Contains(photoOrderStr));
+                string newFilename = string.Format("{0}\\{1}\\{2}.JPG", filePath, outputFolder, sequentialStr);
 
-                string newFilename = string.Format("{0}\\{1} - {2}.jpg", filePath, sequentialStr, addressStr);
                 // Windows only accepts 260 characters on fully qualified filenames
                 newFilename = newFilename.Substring(0, Math.Min(newFilename.Length, 259));
 
-                // Renaming
+                // Rename operation
                 try
                 {
-
-                    File.Move(oldFilename, newFilename);
+                    File.Copy(oldFilename, newFilename);
 
                     filesRenamed.Add(Tuple.Create(oldFilename, newFilename, true, string.Empty));
                 }
@@ -131,6 +144,7 @@ namespace Arc
                     filesRenamed.Add(Tuple.Create(oldFilename, newFilename, false, ex.Message));
                 }
             }
+
             ShowStatisticsDialog(filesRenamed);
             this.StatusLabel.Text = "Pronto";
             this.RenameButton.Enabled = true;
