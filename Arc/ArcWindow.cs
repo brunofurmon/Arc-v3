@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -142,6 +143,25 @@ namespace Arc
                 catch (Exception ex)
                 {
                     filesRenamed.Add(Tuple.Create(oldFilename, newFilename, false, ex.Message));
+                }
+
+                // Reduzing photo size
+                string resizedNewFilename = string.Format("{0}-resized.JPG", newFilename);
+                try
+                {
+                    using (Bitmap image = new Bitmap(newFilename))
+                    {
+                        Image ResultingImage = ImageService.ConvertToFixedSize(image, 1024, 683);
+                        ResultingImage.Save(resizedNewFilename);
+                        ResultingImage.Dispose();
+                    }
+                    File.Delete(newFilename);
+                    File.Move(resizedNewFilename, newFilename);
+                }
+                catch (Exception ex)
+                {
+                    filesRenamed.Add(Tuple.Create(oldFilename, newFilename, false, ex.Message));
+                    throw;
                 }
             }
 
