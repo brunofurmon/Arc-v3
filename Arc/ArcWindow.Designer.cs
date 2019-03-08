@@ -49,12 +49,17 @@ namespace Arc
             this.FilenameTitleLabel = new System.Windows.Forms.Label();
             this.FilenameLabel = new System.Windows.Forms.Label();
             this.RenameButton = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.CompressionLevelLabel = new System.Windows.Forms.Label();
+            this.CompressionLevel = new System.Windows.Forms.NumericUpDown();
             this.StatusBar.SuspendLayout();
             this.MainMenu.SuspendLayout();
             this.HorizontalLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CompressionLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // StatusBar
@@ -172,14 +177,17 @@ namespace Arc
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.RenameButton, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.RenameButton, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(506, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.48341F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.00474F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.22222F));
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.28205F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.15385F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.27488F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(503, 422);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -196,16 +204,16 @@ namespace Arc
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.75325F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.24675F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(497, 72);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(497, 71);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // LineCountLabel
             // 
             this.LineCountLabel.AutoSize = true;
-            this.LineCountLabel.Location = new System.Drawing.Point(114, 45);
+            this.LineCountLabel.Location = new System.Drawing.Point(114, 33);
             this.LineCountLabel.Name = "LineCountLabel";
             this.LineCountLabel.Size = new System.Drawing.Size(0, 13);
             this.LineCountLabel.TabIndex = 0;
@@ -213,7 +221,7 @@ namespace Arc
             // LineCountTitleLabel
             // 
             this.LineCountTitleLabel.AutoSize = true;
-            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 45);
+            this.LineCountTitleLabel.Location = new System.Drawing.Point(3, 33);
             this.LineCountTitleLabel.Name = "LineCountTitleLabel";
             this.LineCountTitleLabel.Size = new System.Drawing.Size(93, 13);
             this.LineCountTitleLabel.TabIndex = 2;
@@ -239,13 +247,56 @@ namespace Arc
             // RenameButton
             // 
             this.RenameButton.Enabled = false;
-            this.RenameButton.Location = new System.Drawing.Point(3, 330);
+            this.RenameButton.Location = new System.Drawing.Point(3, 342);
             this.RenameButton.Name = "RenameButton";
             this.RenameButton.Size = new System.Drawing.Size(75, 23);
             this.RenameButton.TabIndex = 3;
             this.RenameButton.Text = "Renomear";
             this.RenameButton.UseVisualStyleBackColor = true;
             this.RenameButton.Click += new System.EventHandler(this.RenameButton_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.94366F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.05634F));
+            this.tableLayoutPanel3.Controls.Add(this.CompressionLevelLabel, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.CompressionLevel, 1, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 284);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(497, 52);
+            this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // CompressionLevelLabel
+            // 
+            this.CompressionLevelLabel.AutoSize = true;
+            this.CompressionLevelLabel.Location = new System.Drawing.Point(3, 0);
+            this.CompressionLevelLabel.Name = "CompressionLevelLabel";
+            this.CompressionLevelLabel.Size = new System.Drawing.Size(101, 13);
+            this.CompressionLevelLabel.TabIndex = 0;
+            this.CompressionLevelLabel.Text = "Compressão (1-100)";
+            // 
+            // CompressionLevel
+            // 
+            this.CompressionLevel.Location = new System.Drawing.Point(122, 3);
+            this.CompressionLevel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.CompressionLevel.Name = "CompressionLevel";
+            this.CompressionLevel.Size = new System.Drawing.Size(120, 20);
+            this.CompressionLevel.TabIndex = 1;
+            this.CompressionLevel.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             // 
             // ArcWindow
             // 
@@ -267,6 +318,9 @@ namespace Arc
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CompressionLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +347,9 @@ namespace Arc
         private ToolStripMenuItem FecharArquivoToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private Button RenameButton;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label CompressionLevelLabel;
+        private NumericUpDown CompressionLevel;
     }
 }
 

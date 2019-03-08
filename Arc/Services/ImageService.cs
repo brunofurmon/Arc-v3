@@ -7,7 +7,7 @@ namespace Arc.Services
 {
     public static class ImageService
     {
-        public static Image ConvertToFixedSize(Image imgPhoto, int Width, int Height)
+        public static Image ConvertToFixedWidth(Image imgPhoto, int width)
         {
             int sourceWidth = imgPhoto.Width;
             int sourceHeight = imgPhoto.Height;
@@ -16,43 +16,66 @@ namespace Arc.Services
             int destX = 0;
             int destY = 0;
 
+            // x - X
+            // y - Y
+            // y = Y.x / X
+
             float nPercent;
-            float nPercentW = ((float)Width / (float)sourceWidth);
-            float nPercentH = ((float)Height / (float)sourceHeight);
+
+            int height = System.Convert.ToInt16((float)(sourceHeight * width) / (sourceWidth));
+
+            float nPercentW = ((float)width / (float)sourceWidth);
+            float nPercentH = ((float)height / (float)sourceHeight);
 
             if (nPercentH < nPercentW)
             {
                 nPercent = nPercentH;
-                destX = System.Convert.ToInt16((Width -
+                destX = System.Convert.ToInt16((width -
                               (sourceWidth * nPercent)) / 2);
             }
             else
             {
                 nPercent = nPercentW;
-                destY = System.Convert.ToInt16((Height -
+                destY = System.Convert.ToInt16((height -
                               (sourceHeight * nPercent)) / 2);
             }
 
             int destWidth = (int)(sourceWidth * nPercent);
             int destHeight = (int)(sourceHeight * nPercent);
 
-            Bitmap bmPhoto = new Bitmap(Width, Height,
+            Bitmap bmPhoto = new Bitmap(width, height,
                               PixelFormat.Format24bppRgb);
             bmPhoto.SetResolution(imgPhoto.HorizontalResolution,
                              imgPhoto.VerticalResolution);
 
-            Graphics grPhoto = Graphics.FromImage(bmPhoto);
-            grPhoto.Clear(Color.Red);
-            grPhoto.InterpolationMode =
-                    InterpolationMode.Bicubic;
+            ImageCodecInfo jpgEncoder = GetEncoder(ImageFormat.Jpeg);
 
-            grPhoto.DrawImage(imgPhoto,
-                new Rectangle(destX, destY, destWidth, destHeight),
-                new Rectangle(sourceX, sourceY, sourceWidth, sourceHeight),
-                GraphicsUnit.Pixel);
+            using (Graphics grPhoto = Graphics.FromImage(bmPhoto))
+            {
+                grPhoto.Clear(Color.Black);
+                grPhoto.InterpolationMode =
+                        InterpolationMode.Bicubic;
 
-            grPhoto.Dispose();
+                grPhoto.DrawImage(imgPhoto,
+                    new Rectangle(destX, destY, destWidth, destHeight),
+                    new Rectangle(sourceX, sourceY, sourceWidth, sourceHeight),
+                    GraphicsUnit.Pixel);
+            }
+
             return bmPhoto;
+        }
+
+        public static ImageCodecInfo GetEncoder(ImageFormat format)
+        {
+            ImageCodecInfo[] codecs = ImageCodecInfo.GetImageDecoders();
+            foreach (ImageCodecInfo codec in codecs)
+            {
+                if (codec.FormatID == format.Guid)
+                {
+                    return codec;
+                }
+            }
+            return null;
         }
     }
 }
